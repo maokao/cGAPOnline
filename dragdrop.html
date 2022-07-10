@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag Demo</title>
+    <style>
+      .box {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius:999em;
+        position:absolute;
+      }
+      .warpper {
+        position: relative;
+      }
+      .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        position:absolute;
+      }
+      .right {
+        transform: rotate(-45deg);
+      }
+       
+      .left {
+        transform: rotate(135deg);
+      }
+       
+      .up {
+        transform: rotate(-135deg);
+      }
+       
+      .down {
+        transform: rotate(45deg);
+      }
+
+      .positive_z {
+        transform: rotate(90deg);
+      }
+
+      .nagitive_z {
+        transform: rotate(270deg);
+      }
+
+    </style>
+    <script>
+      // 存放拖拽的元素
+      let dragElement = null
+      function onDragStart(e) {
+        // 获取当前拖拽元素
+        dragElement = e.currentTarget
+      }
+      function onDragOver(e) {
+        // 默认的当你dragover的时候会阻止你做drop的操作，所以需要取消这个默认
+        e.preventDefault()
+      }
+      function onDrop(e) {
+        // 当拖动结束的时候，给拖动div所在的位置下面的div做drop事件
+        let dropElement = e.currentTarget
+        if (dragElement != null && dragElement != dropElement) {
+          let wrapper = document.querySelector('.wrapper')
+          // 临时 div 用于存储 box
+          let temp = document.createElement('div')
+          // 添加 temp 到父元素 wrapper 中
+          wrapper.appendChild(temp)
+          // 交换
+          wrapper.replaceChild(temp, dropElement)
+          temp.style.top=dropElement.style.top;
+          temp.style.left=dropElement.style.left;
+
+          wrapper.replaceChild(dropElement, dragElement)
+          dropElement.style.top=dragElement.style.top;
+          dropElement.style.left=dragElement.style.left;
+
+          wrapper.replaceChild(dragElement, temp)
+          dragElement.style.top=temp.style.top;
+          dragElement.style.left=temp.style.left;
+
+        }
+      }
+
+      function rgbcube_click(e) {
+        //let clickElement = e.currentTarget;
+        if(e.className == "arrow nagitive_z")
+          e.className = "arrow positive_z";
+        else if(e.className == "arrow positive_z")
+          e.className = "arrow nagitive_z";
+        else if(e.className == "arrow up")
+          e.className = "arrow down";
+        else if(e.className == "arrow down")
+          e.className = "arrow up";
+        else if(e.className == "arrow left")
+          e.className = "arrow right";
+        else
+          e.className = "arrow left";
+      }
+    </script>
+  </head>
+  <body style="margin: 0px;">
+    <div class="wrapper">
+      <canvas id="DemoCanvas" width="192" height="192"></canvas>
+      <script>
+      var canvas = document.getElementById('DemoCanvas');
+      //Always check for properties and methods, to make sure your code doesn't break in other browsers.
+      if (canvas.getContext) 
+      {
+        var context = canvas.getContext('2d');
+        // Reset the current path
+        context.beginPath(); 
+        context.strokeStyle = '#000000';
+        context.lineWidth = 1;
+        context.moveTo(180.5,120.5);
+        context.lineTo(80.5,120.5);
+        context.moveTo(80.5,10.5);
+        context.lineTo(80.5,120.5);
+        context.moveTo(10.5,180.5);
+        context.lineTo(80.5,120.5);
+        // Make the line visible
+        context.stroke();
+      }
+      </script>
+      <div
+        class="box"
+        style="background: red; top: 110px; left: 145px;"
+        draggable="true"
+        ondragstart="onDragStart(event)"
+        ondragover="onDragOver(event)"
+        ondrop="onDrop(event)"
+      >
+      </div>
+      <div
+        class="box"
+        style="background: green; top: 25px; left: 70px;"
+        draggable="true"
+        ondragstart="onDragStart(event)"
+        ondragover="onDragOver(event)"
+        ondrop="onDrop(event)"
+      >
+      </div>
+      <div
+        class="box"
+        style="background: blue; top: 152px; left: 22px;"
+        draggable="true"
+        ondragstart="onDragStart(event)"
+        ondragover="onDragOver(event)"
+        ondrop="onDrop(event)"
+      >
+      </div>
+      <div id="rgbcube_x" class="arrow right" style="top: 116px; left: 172px;" onclick="rgbcube_click(this);"></div>
+      <div id="rgbcube_y" class="arrow up" style="top: 10.5px; left: 76px;" onclick="rgbcube_click(this);"></div>
+      <div id="rgbcube_z" class="arrow positive_z" style="top: 172px; left: 10.5px;" onclick="rgbcube_click(this);"></div>
+    </div>
+  </body>
+</html>

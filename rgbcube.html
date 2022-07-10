@@ -1,0 +1,68 @@
+<style>
+  .chartContainer {
+    margin: auto;
+    width: 80%;
+    margin: auto;
+}
+</style>
+
+<h2 class="text-center fw-bold">test</h2>
+<div class="chartContainer"></div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+    // 資料
+    const data = [{name:'R', x:200, y:200},
+                  {name:'G', x:100, y:100},
+                  {name:'B', x:50, y:250}];
+
+    const svg = d3.select('.chartContainer')
+                  .append('svg')
+                  .attr('width', 500)
+                  .attr('height', 500);
+
+    svg.append('line').attr('x1', 200).attr('y1', 200).attr('x2', 100).attr('y2', 200).style('stroke', 'black').style('stroke-width', 1);
+    svg.append('line').attr('x1', 100).attr('y1', 100).attr('x2', 100).attr('y2', 200).style('stroke', 'black').style('stroke-width', 1);
+    svg.append('line').attr('x1', 50).attr('y1', 250).attr('x2', 100).attr('y2', 200).style('stroke', 'black').style('stroke-width', 1);
+    /*var data2 = [
+      {x:200,y:200},
+      {x:100,y:200},
+      {x:100,y:100},
+      {x:100,y:200},
+      {x:50,y:250}
+    ];*/
+    
+    // 建立圓點
+    const dots = svg.append('g')
+                    .selectAll('circle')
+                    .data(data)
+                    .enter()
+                    .append('circle')
+                    .attr('r', 10)
+                    .attr('cx', d=>d.x)
+                    .attr('cy', d=>d.y)
+                    .style("fill", function(d){ return d.name=="R" ? '#ff0000': d.name=="G" ? '#00ff00':'#0000ff'; })
+                    .attr("stroke", "#b3a2c8")
+                    .style("stroke-width", 1)
+                    .style('cursor', 'pointer')
+
+    // 建立拖曳方法
+    const drag = d3.drag()
+                   .on('start', function(){
+                      d3.select(this)
+                        .style('stroke', 'blue')
+                     })
+                   .on('drag', function(){
+                      let pt = d3.pointer(event, this)
+                      d3.select(this)
+                        .attr('cx', pt[0])
+                        .attr('cy', pt[1])
+                     })
+                    .on('end', function(){
+                      d3.select(this)
+                        .style('stroke', '#b3a2c8')
+                     });
+
+    dots.call(drag);
+    // 或是drag(svg.selectAll('circle'));
+</script>

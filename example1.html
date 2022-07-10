@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>My first Three.js app</title>
+		<style>
+			body { margin: 0; }
+			#canvas {
+             background-color: #FFF;
+             width: 400px;
+             height:400px;
+             border: 1px solid black;
+              }
+		</style> 
+		<script src="http://threejs.org/build/three.min.js"></script>
+		<script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+
+	</head>
+	<body>
+	<div id="canvas"></div>	
+		
+    <script>
+
+			const renderer = new THREE.WebGLRenderer();
+			var container = document.getElementById('canvas');
+	        var w = container.offsetWidth;
+	        var h = container.offsetHeight;
+
+	        renderer.setSize(w, h);
+			container.appendChild( renderer.domElement );
+
+			const camera = new THREE.PerspectiveCamera( 45, 1, 1, 2000 );
+			camera.position.set( 0, 0, 800 );
+			camera.lookAt( 0, 0, 0 );
+			// 建立 OrbitControls
+			let cameraControl = new THREE.OrbitControls(camera, renderer.domElement);
+
+			//cameraControl.enableDamping = true; // 啟用阻尼效果
+			//cameraControl.dampingFactor = 0.25; // 阻尼系數
+			//cameraControl.autoRotate = true;    // 啟用自動旋轉
+
+			const scene = new THREE.Scene();
+
+			
+			//draw lines
+			const material = new THREE.LineBasicMaterial( { color: 0xffffff } );
+			const points = [];
+			const points2 = [];
+
+	        points2.push( new THREE.Vector3(-200.0,-200.0,-200.0));
+	        points2.push( new THREE.Vector3(200.0,-200.0,-200.0));
+
+	        points2.push( new THREE.Vector3(-200.0,-200.0,-200.0));
+	        points2.push( new THREE.Vector3(-200.0,200.0,-200.0));
+	        
+	        points2.push( new THREE.Vector3(-200.0,-200.0,-200.0));
+	        points2.push( new THREE.Vector3(-200.0,-200.0,200.0));
+
+	        points.push( new THREE.Vector3(200.0,200.0,200.0));
+	        points.push( new THREE.Vector3(200.0,200.0,-200.0));
+
+			points.push( new THREE.Vector3(200.0,200.0,200.0));
+	        points.push( new THREE.Vector3(-200.0,200.0,200.0));
+	        
+	        points.push( new THREE.Vector3(200.0,200.0,200.0));
+	        points.push( new THREE.Vector3(200.0,-200.0,200.0));
+
+	        points.push( new THREE.Vector3(-200.0,-200.0,200.0));
+	        points.push( new THREE.Vector3(200.0,-200.0,200.0));
+	        
+	        points.push( new THREE.Vector3(-200.0,-200.0,200.0));
+	        points.push( new THREE.Vector3(-200.0,200.0,200.0));		        
+
+	        points.push( new THREE.Vector3(-200.0,200.0,-200.0));
+	        points.push( new THREE.Vector3(-200.0,200.0,200.0));
+	        
+	        points.push( new THREE.Vector3(-200.0,200.0,-200.0));
+	        points.push( new THREE.Vector3(200.0,200.0,-200.0));
+
+	        points.push( new THREE.Vector3(200.0,-200.0,-200.0));
+	        points.push( new THREE.Vector3(200.0,200.0,-200.0));
+	        
+			points.push( new THREE.Vector3(200.0,-200.0,-200.0));
+	        points.push( new THREE.Vector3(200.0,-200.0,200.0));
+
+			const geometry = new THREE.BufferGeometry().setFromPoints( points );
+			const line = new THREE.Line( geometry, material );
+			scene.add( line );
+
+			const material2 = new THREE.LineBasicMaterial( { color: 0xffffff } );
+					
+	        const geometry2 = new THREE.BufferGeometry().setFromPoints( points2 );
+			const line2 = new THREE.Line( geometry2, material2 );
+			scene.add( line2 );
+
+
+			//draw 8 balls
+			const geometry3 = new THREE.SphereGeometry( 16, 32, 32 );	// (radius, widthSegments, heightSegments)
+			const material3 = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
+			const red_sphere = new THREE.Mesh( geometry3, material3 );
+			//red_sphere.radius = 1;
+			red_sphere.position.set(200, -200, -200);
+			scene.add( red_sphere );
+
+			const green_sphere = new THREE.Mesh( geometry3, new THREE.MeshBasicMaterial( { color: 0x00ff00 } ) );
+			green_sphere.radius = 1;
+			green_sphere.position.set(-200, 200, -200);
+			scene.add( green_sphere );
+
+			const blue_sphere = new THREE.Mesh( geometry3, new THREE.MeshBasicMaterial( { color: 0x0000ff } ) );
+			blue_sphere.radius = 1;
+			blue_sphere.position.set(-200, -200, 200);
+			scene.add( blue_sphere );
+
+			const yellow_sphere = new THREE.Mesh( geometry3, new THREE.MeshBasicMaterial( { color: 0xffff00 } ) );
+			yellow_sphere.radius = 1;
+			yellow_sphere.position.set(200, 200, -200);
+			scene.add( yellow_sphere );
+
+			const cyan_sphere = new THREE.Mesh( geometry3, new THREE.MeshBasicMaterial( { color: 0x00ffff } ) );
+			cyan_sphere.radius = 1;
+			cyan_sphere.position.set(-200, 200, 200);
+			scene.add( cyan_sphere );
+
+			const magenta_sphere = new THREE.Mesh( geometry3, new THREE.MeshBasicMaterial( { color: 0xff00ff } ) );
+			magenta_sphere.radius = 1;
+			magenta_sphere.position.set(200, -200, 200);
+			scene.add( magenta_sphere );
+
+			const white_sphere = new THREE.Mesh( geometry3, new THREE.MeshBasicMaterial( { color: 0xffffff } ) );
+			white_sphere.radius = 1;
+			white_sphere.position.set(200, 200, 200);
+			scene.add( white_sphere );
+
+			const black_sphere = new THREE.Mesh( geometry3, new THREE.MeshBasicMaterial( { color: 0x000000 } ) );
+			black_sphere.radius = 1;
+			black_sphere.position.set(-200, -200, -200);
+			scene.add( black_sphere );
+
+
+			const geometry4 = new THREE.BufferGeometry();
+			const vertices = [];
+			const colors = [];
+
+  			const color = new THREE.Color();
+
+			material4 = new THREE.PointsMaterial({
+			    size: 20,
+			    vertexColors: true
+			});
+
+			let albxx_points;
+			const particleCount = 150;
+			const range = 400;
+			for (let i = 0; i < particleCount; i++) {
+			    const x = Math.random() * range - range / 2;
+			    const y = Math.random() * range - range / 2;
+			    const z = Math.random() * range - range / 2;
+
+			    vertices.push(x, y, z);
+
+			    const vx = ( x / particleCount ) + 0.5;
+			    const vy = ( y / particleCount ) + 0.5;
+			    const vz = ( z / particleCount ) + 0.5;
+
+			    color.setRGB( vx, vy, vz );
+
+			    colors.push( color.r, color.g, color.b );
+			}
+
+			// 加個 position 屬性記錄各頂點位置
+			geometry4.setAttribute('position',new THREE.Float32BufferAttribute(vertices, 3));
+			geometry4.setAttribute( 'color', new THREE.Float32BufferAttribute( colors, 3 ) );
+
+			albxx_points = new THREE.Points(geometry4, material4);
+			scene.add(albxx_points);
+
+			//renderer.render( scene, camera );
+			function render() {
+				requestAnimationFrame(render);
+				cameraControl.update(); // 需設定 update
+				renderer.render(scene, camera);
+			}
+			render();
+			/*var render = function () {
+				requestAnimationFrame( render );
+
+				scene.rotation.x += 0.01;
+				scene.rotation.y += 0.01;
+
+				renderer.render(scene, camera);
+			};
+
+			render();*/
+/*			
+			var scene = new THREE.Scene();
+			//var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+			var camera = new THREE.PerspectiveCamera( 75, 1, 0.1, 1000 );
+
+			var renderer = new THREE.WebGLRenderer();
+			var container = document.getElementById('canvas');
+	         var w = container.offsetWidth;
+	         var h = container.offsetHeight;
+	         renderer.setSize(w, h);
+			//renderer.setSize( window.innerWidth, window.innerHeight );
+			//document.body.appendChild( renderer.domElement );
+			container.appendChild(renderer.domElement);
+
+			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			var cube = new THREE.Mesh( geometry, material );
+			scene.add( cube );
+
+			camera.position.z = 5;
+
+			var render = function () {
+				requestAnimationFrame( render );
+
+				cube.rotation.x += 0.01;
+				cube.rotation.y += 0.01;
+
+				renderer.render(scene, camera);
+			};
+
+			render();
+*/
+		</script>
+
+		
+	</body>
+</html>
