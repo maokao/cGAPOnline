@@ -39,9 +39,8 @@
   <link rel="stylesheet" href="css/lightbox.css" />
   <script src="js/import_utility.js"></script>
   <script src="js/papaparse.min.js"></script>
-  <script type="text/javascript" src="js/nodelink.js"></script>
-  <script type="text/javascript" src="js/nodelinkwindow.js"></script>
   <script type="text/javascript" src="js/rgbcube.js"></script>
+  <script type="text/javascript" src="js/color.js"></script>
   <!-- <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />-->
 
@@ -326,7 +325,6 @@
                       <option value="null"> ----- </option>
                       <option value="mammals" selected> Mammals </option>
                       <option value="adult-stretch" > Adult-stretch </option>
-                      <option value="adult+stretch" > Adult+stretch </option>
                       <option value="audiology" > Audiology </option>
                       <option value="balance" > Balance </option>
                       <option value="breast-cancer" > Breast-cancer </option>
@@ -512,11 +510,13 @@
               <select id="palette" class="form-control form-control-sm">
                 <option value="cGAP" selected>cGAP</option>
                 <optgroup label =  "Sequential palettes">
+                  <option value="GAP_Rainbow">GAP-Rainbow</option>
                   <option value="Grey">Grey</option>
                   <option value="YlGnBu">YlGnBu</option>
-                  <option value="YlOrRd">YlOrRd</option>
+                  <option value="YlOrRd">YlOrRd</option>                 
                 </optgroup>
                 <optgroup label =  "Diverging palettes">
+                  <option value="GAP_Blue_White_Red">GAP-Blue-White-Red</option>
                   <option value="Spectral">Spectral</option>
                   <option value="RdYlGn">RdYlGn</option>
                   <option value="RdYlBu">RdYlBu</option>
@@ -526,6 +526,7 @@
                   <option value="PRGn">PRGn</option>
                   <option value="BrBG">BrBG</option>
                   <option value="PuOr">PuOr</option>
+                  
                 </optgroup>
               </select>
               <input type="checkbox" id="isColorReverse" disabled="disabled"> reverse
@@ -571,7 +572,7 @@
             <div id="sectional_name" style="padding:10px;">Sectional Display:
               <div id="sectional_display" style="padding:10px;">
                 <div class="slider-wrapper slider-strips">
-                  <input id="inputRange1" class="input-range" type="text" data-slider-step="0.1" data-slider-value="0, 100" data-slider-min="0" data-slider-max="100" data-slider-range="true" data-slider-tooltip_split="true" />
+                  <input id="inputRange1" class="input-range" type="text" data-slider-step="0.01" data-slider-value="0, 100" data-slider-min="0" data-slider-max="100" data-slider-range="true" data-slider-tooltip_split="true" />
                 </div>
               </div>
             </div>
@@ -579,7 +580,7 @@
               Restricted Display:
               <div id="restricted_display" style="padding:10px; display:none;">
                 <div class="slider-wrapper slider-strips">
-                  <input id="inputRange2" class="input-range" type="text" data-slider-step="0.1" data-slider-value="0, 100" data-slider-min="0" data-slider-max="100" data-slider-range="true" data-slider-tooltip_split="true" />
+                  <input id="inputRange2" class="input-range" type="text" data-slider-step="0.01" data-slider-value="0, 100" data-slider-min="0" data-slider-max="100" data-slider-range="true" data-slider-tooltip_split="true" />
                 </div>
               </div>
             </div>
@@ -759,7 +760,7 @@
             </li>
           </ul> 
           -->
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) 
             <li class="nav-item dropdown no-arrow mx-1">
@@ -882,7 +883,7 @@
 
 
         </div>
-        <div class="div_right_bottom"><p style="text-align:right;white-space:pre-wrap;" class="">©&nbsp;<a href="http://gap.stat.sinica.edu.tw" target="_blank" style="color: #858796;">Lab for Information Visualzation</a><br>Institute of Statistical Science, Academia Sinica</br>Web Design By <a href="http://maokao.idv.tw" target="_blank" style="color: #858796;text-decoration:underline;">Chiun-How Kao</a> 2022</p></div>
+        <div class="div_right_bottom"><p style="text-align:right;white-space:pre-wrap;" class="">©&nbsp;<a href="http://gap.stat.sinica.edu.tw" target="_blank" style="color: #858796;">Lab for Information Visualzation</a><br>Institute of Statistical Science, Academia Sinica</br>Web Design By <a href="http://maokao.idv.tw" target="_blank" style="color: #858796;text-decoration:underline;"><b>Chiun-How Kao</b></a> 2022</p></div>
         <!-- /.container-fluid -->
 
       </div>
