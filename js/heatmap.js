@@ -892,7 +892,8 @@ function heatmap_display(url, heatmapId, paletteName, delimiter) {
         {
             //yc_X = -5-yc*cellWidth; 
             setupycLabel(yc_X-col_fontsize/2, -5, heatmapId);
-            ycPalette = "Spectral";
+            //ycPalette = "Spectral";
+            ycPalette = "GAP_Rainbow";
             setupHeatmap2(ycData,"mv12",yc_X,0,12, heatmapId, d3.interpolateSpectral);
             $("#optionDataMap").append($("<option></option>").attr("value", "yc").text("Yconti. covariates"));
         }
@@ -908,7 +909,8 @@ function heatmap_display(url, heatmapId, paletteName, delimiter) {
         {
             //yc_X = -5-yc*cellWidth; 
             setupxcLabel(col_number*cellWidth+5, xc_Y+xcov_cellHeight-row_fontsize/2, heatmapId);
-            xcPalette = "Spectral";
+            //xcPalette = "Spectral";
+            xcPalette = "GAP_Rainbow";
             setupHeatmap2(xcData,"mv14",0,xc_Y,14, heatmapId, d3.interpolateSpectral);
             $("#optionDataMap").append($("<option></option>").attr("value", "xc").text("Xconti. covariates"));
         }
@@ -959,7 +961,8 @@ function heatmap_display(url, heatmapId, paletteName, delimiter) {
         drawStarPlot(true); //initMode
 
         var colorID = d3.interpolateSpectral;
-                rpPalette = "Spectral";
+                //rpPalette = "Spectral";
+                rpPalette = "GAP_Rainbow";
                 rowIsSimilarity = false;
                 row_Scale_id = 3;
              $("#roworder").prop("disabled",false);
@@ -1004,7 +1007,8 @@ function heatmap_display(url, heatmapId, paletteName, delimiter) {
             //var colProxData1D = runProximity(0, 1, 0);
 
                 colorID = d3.interpolateSpectral;
-                cpPalette = "Spectral";
+                //cpPalette = "Spectral";
+                cpPalette = "GAP_Rainbow";
                 colIsSimilarity = false;
                 col_Scale_id = 3;
 
@@ -1834,12 +1838,13 @@ function heatmap_display(url, heatmapId, paletteName, delimiter) {
                     $("#isColorReverse").prop("checked", false);  
            }
            else if(optionTargetDataMap == "cp")
-           {
+           {console.log("------------"+cpminInputRange1+","+cpmaxInputRange1+","+cpminInputRange2+","+cpmaxInputRange2+","+cp_min_value+","+cp_max_value);
                 //if(colIsSimilarity==true)
                 if(col_Scale_id == 1)
-                    resetInputRange(cpminInputRange1,cpmaxInputRange1,cpminInputRange2,cpmaxInputRange2,-1,1);
+                    setInputRange(cpminInputRange1,cpmaxInputRange1,cpminInputRange2,cpmaxInputRange2,-1,1);
                 else
-                    resetInputRange(cpminInputRange1,cpmaxInputRange1,cpminInputRange2,cpmaxInputRange2,cp_min_value, cp_max_value);
+                    setInputRange(cpminInputRange1,cpmaxInputRange1,cpminInputRange2,cpmaxInputRange2,cp_min_value, cp_max_value);
+                console.log("==============");
                 $('#palette').val(cpPalette);
                 if(cpPaletteReverse)
                     $("#isColorReverse").prop("checked", true);
