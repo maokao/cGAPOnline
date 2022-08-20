@@ -1,67 +1,67 @@
-ID	Order	Family	TI	BI	TC	BC	TP	BP	TM	BM
-Opposum	0	0	4	5	2	2	4	4	2	2
-Hairy.Tail.Mole	1	1	4	4	2	2	5	5	2	2
-Common.Mole	1	1	4	3	2	1	4	4	2	2
-Star.Nose.Mole	1	1	4	4	2	2	5	5	2	2
-Brown.Bat	2	2	3	4	2	2	4	4	2	2
-Silver.Hair.Bat	2	2	3	4	2	2	3	4	2	2
-Pigmy.Bat	2	3	3	4	2	2	3	3	2	2
-House.Bat	2	2	3	4	2	2	2	3	2	2
-Red.Bat	2	2	2	4	2	2	3	3	2	2
-Hoary.Bat	2	2	2	4	2	2	3	3	2	2
-Lump.Nose.Bat	2	2	3	4	2	2	3	4	2	2
-Armadillo	3	4	1	1	1	1	1	1	2	2
-Pika	4	5	3	2	1	1	3	3	2	2
-Snowshoe.Rabbit	4	6	3	2	1	1	4	3	2	2
-Beaver	5	7	2	2	1	1	3	2	2	2
-Marmot	5	8	2	2	1	1	3	2	2	2
-Groundhog	5	8	2	2	1	1	3	2	2	2
-Prairie.Dog	5	8	2	2	1	1	3	2	2	2
-Ground.Squirrel	5	8	2	2	1	1	3	2	2	2
-Chipmunk	5	8	2	2	1	1	3	2	2	2
-Gray.Squirrel	5	8	2	2	1	1	2	2	2	2
-Fox.Squirrel	5	8	2	2	1	1	2	2	2	2
-Pocket.Gopher	5	9	2	2	1	1	2	2	2	2
-Kangaroo.Rat	5	10	2	2	1	1	2	2	2	2
-Pack.Rat	5	11	2	2	1	1	1	1	2	2
-Field.Mouse	5	12	2	2	1	1	1	1	2	2
-Muskrat	5	11	2	2	1	1	1	1	2	2
-Black.Rat	5	12	2	2	1	1	1	1	2	2
-House.Mouse	5	12	2	2	1	1	1	1	2	2
-Porcupine	5	13	2	2	1	1	2	2	2	2
-Guinea.Pig	5	14	2	2	1	1	2	2	2	2
-Coyote	6	15	2	4	2	2	5	5	2	2
-Wolf	6	15	4	4	2	2	5	5	1	2
-Fox	6	15	4	4	2	2	5	5	1	2
-Bear	6	16	4	4	2	2	5	5	1	2
-Civet.Cat	6	17	4	4	2	2	5	5	1	1
-Raccoon	6	18	4	4	2	2	5	5	2	1
-Marten	6	19	4	4	2	2	5	5	1	1
-Fisher	6	19	4	4	2	2	5	5	1	1
-Weasel	6	19	4	4	2	2	4	4	1	1
-Mink	6	19	4	4	2	2	4	4	1	1
-Ferrer	6	19	4	4	2	2	4	4	1	1
-Wolverine	6	19	4	4	2	2	5	5	1	1
-Badger	6	19	4	4	2	2	4	4	1	1
-Skunk	6	20	4	4	2	2	4	4	1	1
-River.Otter	6	19	4	4	2	2	5	4	1	1
-Sea.Otter	6	19	4	3	2	2	4	4	1	1
-Jaguar	6	21	4	4	2	2	4	3	1	1
-Ocelot	6	21	4	4	2	2	4	3	1	1
-Cougar	6	21	4	4	2	2	4	3	1	1
-Lynx	6	21	4	4	2	2	4	3	1	1
-Fur.Seal	6	22	4	3	2	2	5	5	1	1
-Sea.Lion	6	22	4	3	2	2	5	5	1	1
-Walrus	6	23	2	1	2	2	4	4	1	1
-Grey.Seal	6	24	4	3	2	2	4	4	1	1
-Elephant.Seal	6	24	3	2	2	2	5	5	1	1
-Peccary	7	25	3	4	2	2	4	4	2	2
-Elk	7	26	1	5	2	1	4	4	2	2
-Deer	7	26	1	5	1	1	4	4	2	2
-Moose	7	26	1	5	1	1	4	4	2	2
-Reindeer	7	26	1	5	2	1	4	4	2	2
-Antelope	7	27	1	5	1	1	4	4	2	2
-Bison	7	27	1	5	1	1	4	4	2	2
-Mountain.Goat	7	27	1	5	1	1	4	4	2	2
-Muskox	7	27	1	5	1	1	4	4	2	2
-Mountain.Sheep	7	27	1	5	1	1	4	4	2	2
+ID	Order	TI	BI	TC	BC	TP	BP	TM	BM
+Opposum	0	4	5	2	2	4	4	2	2
+Hairy.Tail.Mole	1	4	4	2	2	5	5	2	2
+Common.Mole	1	4	3	2	1	4	4	2	2
+Star.Nose.Mole	1	4	4	2	2	5	5	2	2
+Brown.Bat	2	3	4	2	2	4	4	2	2
+Silver.Hair.Bat	2	3	4	2	2	3	4	2	2
+Pigmy.Bat	2	3	4	2	2	3	3	2	2
+House.Bat	2	3	4	2	2	2	3	2	2
+Red.Bat	2	2	4	2	2	3	3	2	2
+Hoary.Bat	2	2	4	2	2	3	3	2	2
+Lump.Nose.Bat	2	3	4	2	2	3	4	2	2
+Armadillo	3	1	1	1	1	1	1	2	2
+Pika	4	3	2	1	1	3	3	2	2
+Snowshoe.Rabbit	4	3	2	1	1	4	3	2	2
+Beaver	5	2	2	1	1	3	2	2	2
+Marmot	5	2	2	1	1	3	2	2	2
+Groundhog	5	2	2	1	1	3	2	2	2
+Prairie.Dog	5	2	2	1	1	3	2	2	2
+Ground.Squirrel	5	2	2	1	1	3	2	2	2
+Chipmunk	5	2	2	1	1	3	2	2	2
+Gray.Squirrel	5	2	2	1	1	2	2	2	2
+Fox.Squirrel	5	2	2	1	1	2	2	2	2
+Pocket.Gopher	5	2	2	1	1	2	2	2	2
+Kangaroo.Rat	5	2	2	1	1	2	2	2	2
+Pack.Rat	5	2	2	1	1	1	1	2	2
+Field.Mouse	5	2	2	1	1	1	1	2	2
+Muskrat	5	2	2	1	1	1	1	2	2
+Black.Rat	5	2	2	1	1	1	1	2	2
+House.Mouse	5	2	2	1	1	1	1	2	2
+Porcupine	5	2	2	1	1	2	2	2	2
+Guinea.Pig	5	2	2	1	1	2	2	2	2
+Coyote	6	2	4	2	2	5	5	2	2
+Wolf	6	4	4	2	2	5	5	1	2
+Fox	6	4	4	2	2	5	5	1	2
+Bear	6	4	4	2	2	5	5	1	2
+Civet.Cat	6	4	4	2	2	5	5	1	1
+Raccoon	6	4	4	2	2	5	5	2	1
+Marten	6	4	4	2	2	5	5	1	1
+Fisher	6	4	4	2	2	5	5	1	1
+Weasel	6	4	4	2	2	4	4	1	1
+Mink	6	4	4	2	2	4	4	1	1
+Ferrer	6	4	4	2	2	4	4	1	1
+Wolverine	6	4	4	2	2	5	5	1	1
+Badger	6	4	4	2	2	4	4	1	1
+Skunk	6	4	4	2	2	4	4	1	1
+River.Otter	6	4	4	2	2	5	4	1	1
+Sea.Otter	6	4	3	2	2	4	4	1	1
+Jaguar	6	4	4	2	2	4	3	1	1
+Ocelot	6	4	4	2	2	4	3	1	1
+Cougar	6	4	4	2	2	4	3	1	1
+Lynx	6	4	4	2	2	4	3	1	1
+Fur.Seal	6	4	3	2	2	5	5	1	1
+Sea.Lion	6	4	3	2	2	5	5	1	1
+Walrus	6	2	1	2	2	4	4	1	1
+Grey.Seal	6	4	3	2	2	4	4	1	1
+Elephant.Seal	6	3	2	2	2	5	5	1	1
+Peccary	7	3	4	2	2	4	4	2	2
+Elk	7	1	5	2	1	4	4	2	2
+Deer	7	1	5	1	1	4	4	2	2
+Moose	7	1	5	1	1	4	4	2	2
+Reindeer	7	1	5	2	1	4	4	2	2
+Antelope	7	1	5	1	1	4	4	2	2
+Bison	7	1	5	1	1	4	4	2	2
+Mountain.Goat	7	1	5	1	1	4	4	2	2
+Muskox	7	1	5	1	1	4	4	2	2
+Mountain.Sheep	7	1	5	1	1	4	4	2	2
