@@ -3850,7 +3850,7 @@ function loadExample(filename) {
         removeAllColorLegend();
         var sep = "\t";
         var dataFileName = "data/mammals.txt";   
-        setAllParameters(dataFileName, true, true, 0, 0, 0, 0);
+        setAllParameters(dataFileName, true, true, 1, 0, 0, 0);
         heatmap_display(dataFileName, "#heatmap", "cGAP", sep);       
     }
     else if(filename == "adult-stretch")
