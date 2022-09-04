@@ -1,3 +1,4 @@
+//Module['onRuntimeInitialized'] = runHomals;
 var runHomalsWASM = Module.cwrap(
           "run_homals", //c function name
           null,   //output type
