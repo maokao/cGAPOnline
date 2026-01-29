@@ -3853,6 +3853,15 @@ function loadExample(filename) {
         setAllParameters(dataFileName, true, true, 1, 0, 0, 0);
         heatmap_display(dataFileName, "#heatmap", "cGAP", sep);       
     }
+    else if(filename == "animals")
+    {
+        resetAllParameters("#heatmap");
+        removeAllColorLegend();
+        var sep = "\t";
+        var dataFileName = "data/animals.txt";   
+        setAllParameters(dataFileName, true, true, 0, 0, 0, 0);
+        heatmap_display(dataFileName, "#heatmap", "cGAP", sep);       
+    }
     else if(filename == "adult-stretch")
     {
         resetAllParameters("#heatmap");
